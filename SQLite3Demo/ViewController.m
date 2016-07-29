@@ -104,24 +104,11 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellID];
     }
     
-    if (_strRange != 0) {
-        User *str = self.dataArr[indexPath.row];
-        //富文本操作
-        NSMutableAttributedString *noteStr = [[NSMutableAttributedString alloc]initWithString:str.name];
-        
-        //范围搜索，0代表数组第一个
-        NSRange redRange = NSMakeRange(0, _strRange.length);
-    
-        //富文本操作  －给文字加上红色
-        [noteStr addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:redRange];
-        [cell.textLabel setAttributedText:noteStr];
-        cell.textLabel.text=str.number;
-    }else{
-    
+ 
     User *user = self.dataArr[indexPath.row];
         cell.textLabel.text = user.name;
         cell.detailTextLabel.text = user.number;
-    }
+    
     
     return cell;
 }

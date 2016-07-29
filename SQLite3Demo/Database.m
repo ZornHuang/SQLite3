@@ -53,14 +53,14 @@ static sqlite3 *db = nil;
             //1.准备sql语句
             NSString *sql =[NSString stringWithFormat:@"CREATE TABLE %@ (userID INTEGER PRIMARY KEY NOT NULL UNIQUE, name TEXT NOT NULL,number INTEGER NOT NULL)",_tableName];
             //2.调试使用
-            char *errmsg = NULL;
+//            char *errmsg = NULL;
             //3.执行sql语句
-            sqlite3_exec(db, sql.UTF8String, NULL, NULL, &errmsg);
-            if (!errmsg) {
-                NSLog(@"创表成功了");
-            }else{
-                NSLog(@"创表失败了：%s",errmsg);
-            }
+            sqlite3_exec(db, sql.UTF8String, NULL, NULL, NULL);
+//            if (!errmsg) {
+//                NSLog(@"创表成功了");
+//            }else{
+//                NSLog(@"创表失败了：%s",errmsg);
+//            }
 
         
         
